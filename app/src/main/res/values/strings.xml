@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Registeration</string>
+    <string name="user_name">User name</string>
+    <string name="user_name_hint">Enter your user name</string>
+    <string name="email">Email</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="phone">Phone Number</string>
+    <string name="phone_hint">Enter your phone number</string>
+    <string name="password">Password</string>
+    <string name="password_hint">Enter your Password</string>
+</resources>
