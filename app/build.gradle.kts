@@ -72,6 +72,7 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation("androidx.activity:activity-compose:1.8.2")
 
     //room
     implementation("androidx.room:room-common:2.6.1")
@@ -85,6 +86,31 @@ dependencies {
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+    //face detection
+    implementation("com.google.mlkit:face-mesh-detection:16.0.0-beta1")
+
+    //CAMERA STUFF
+    implementation("androidx.camera:camera-camera2:1.3.1")
+    implementation("androidx.camera:camera-lifecycle:1.3.1")
+    implementation("androidx.camera:camera-view:1.3.1")
+    implementation("androidx.camera:camera-extensions:1.3.1")
+
+    //Navigation
+    implementation("androidx.navigation:navigation-compose:2.7.6")
+
+    //permission
+    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
+
+    //lifecycle camera controller 2.6.2
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0")
+
+    //MLKIT
+    implementation ("com.google.mlkit:face-detection:16.1.5")
+    implementation ("com.google.android.gms:play-services-mlkit-face-detection:17.1.0")
 
 
 }

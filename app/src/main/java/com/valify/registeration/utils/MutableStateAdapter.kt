@@ -1,4 +1,4 @@
-package com.valify.registeration.presentation
+package com.valify.registeration.utils
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State

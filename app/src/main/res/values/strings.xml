@@ -8,4 +8,7 @@
     <string name="phone_hint">Enter your phone number</string>
     <string name="password">Password</string>
     <string name="password_hint">Enter your Password</string>
+    <string name="submit">Submit</string>
+    <string name="no_permission_msg">Please grant permission to use the camera for this app.</string>
+    <string name="grant_permission">Grant Permission</string>
 </resources>

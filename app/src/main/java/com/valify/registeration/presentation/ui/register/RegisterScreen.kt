@@ -1,4 +1,4 @@
-package com.valify.registeration.presentation.ui
+package com.valify.registeration.presentation.ui.register
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
@@ -13,6 +13,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.LocalTextStyle
@@ -24,7 +26,6 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -34,8 +35,12 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
+import androidx.navigation.NavHost
 import com.valify.registeration.R
-import com.valify.registeration.presentation.MutableStateAdapter
+import com.valify.registeration.navigation.NavigationItem
+import com.valify.registeration.presentation.ui.camera.CameraScreen
+import com.valify.registeration.utils.MutableStateAdapter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
@@ -44,7 +49,7 @@ import kotlin.coroutines.EmptyCoroutineContext
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnrememberedMutableState")
 @Composable
-fun RegisterScreenContent(viewModel: RegisterViewModel = hiltViewModel(), modifier: Modifier) {
+fun RegisterScreen(navController: NavController, viewModel: RegisterViewModel = hiltViewModel()) {
     val onLoading = viewModel.onLoading
 
     val (userName, setUserName) = viewModel.userName.collectAsMutableState()
@@ -90,7 +95,15 @@ fun RegisterScreenContent(viewModel: RegisterViewModel = hiltViewModel(), modifi
                 text = password,
                 onTextChanged = setPassword
             )
-
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .align(Alignment.CenterHorizontally).padding(8.dp),
+                shape = RoundedCornerShape(16.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Color.Blue, contentColor = Color.White),
+                onClick = { navController.navigate(NavigationItem.Camera.route) }) {
+                Text(stringResource(R.string.submit))
+            }
         }
     }
 }
