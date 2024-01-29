@@ -17,4 +17,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Registeration"
 include(":app")
- 
+include(":smileRegisteration")

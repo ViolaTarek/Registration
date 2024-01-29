@@ -56,6 +56,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":smileRegisteration"))
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
@@ -65,6 +66,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
+    implementation(project(":smileRegisteration"))
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -76,43 +78,12 @@ dependencies {
     implementation( "androidx.compose.runtime:runtime-livedata:1.6.0")
     implementation ("androidx.compose.material:material-icons-extended:1.3.1")
 
-    //room
-    implementation("androidx.room:room-common:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
-    ksp("androidx.room:room-compiler:2.6.1")
-
-
     //Hilt
     val hiltVersion = 2.47
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
-    //face detection
-    implementation("com.google.mlkit:face-mesh-detection:16.0.0-beta1")
-
-    //CAMERA STUFF
-    implementation("androidx.camera:camera-camera2:1.3.1")
-    implementation("androidx.camera:camera-lifecycle:1.3.1")
-    implementation("androidx.camera:camera-view:1.3.1")
-    implementation("androidx.camera:camera-extensions:1.3.1")
-
-    //Navigation
-    implementation("androidx.navigation:navigation-compose:2.7.6")
-
-    //permission
-    implementation("com.google.accompanist:accompanist-permissions:0.32.0")
-
-    //lifecycle camera controller 2.6.2
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0")
-
-    //MLKIT
-    implementation ("com.google.mlkit:face-detection:16.1.5")
-    implementation ("com.google.android.gms:play-services-mlkit-face-detection:17.1.0")
 
 
 }
