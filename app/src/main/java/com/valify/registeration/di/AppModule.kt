@@ -3,9 +3,9 @@ package com.valify.registeration.di
 import android.content.Context
 import androidx.room.Room
 import com.valify.registeration.data.AppDatabase
-import com.valify.registeration.data.User
 import com.valify.registeration.data.UserDao
 import com.valify.registeration.data.UserRepository
+import com.valify.registeration.domain.UserUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,12 +19,13 @@ object AppModule {
     @Provides
     @Singleton
     fun provideAppDatabase(@ApplicationContext appContext: Context): AppDatabase {
-            return Room.databaseBuilder(
-                appContext,
-                AppDatabase::class.java,
-                "room_database"
-            ).build()
+        return Room.databaseBuilder(
+            appContext,
+            AppDatabase::class.java,
+            "room_database"
+        ).build()
     }
+
 
     @Provides
     @Singleton
@@ -37,4 +38,10 @@ object AppModule {
     fun provideUserRepository(userDao: UserDao): UserRepository {
         return UserRepository(userDao)
     }
+
+    @Provides
+    @Singleton
+    fun provideHomeUseCase(userRepo: UserRepository) =
+        UserUseCase(userRepo)
+
 }

@@ -1,5 +1,6 @@
 package com.valify.registeration.data
 
+import android.media.Image
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -10,5 +11,6 @@ data class User(
     val userName: String,
     val phone: String,
     val email: String,
-    val password: String
+    val password: String,
+    val image: String?=null
 )

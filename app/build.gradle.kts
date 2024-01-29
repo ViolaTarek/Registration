@@ -73,6 +73,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("androidx.activity:activity-compose:1.8.2")
+    implementation( "androidx.compose.runtime:runtime-livedata:1.6.0")
+    implementation ("androidx.compose.material:material-icons-extended:1.3.1")
 
     //room
     implementation("androidx.room:room-common:2.6.1")
